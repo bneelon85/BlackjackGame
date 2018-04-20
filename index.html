@@ -1,25 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> </title>
-        <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-    </head>
-    <body>
-<div id="table">
-  <div id="messages"></div>
-  <label>Dealer: </label>
-  <label id="dealer-points" class="points"></label>
-  <div id="dealer-hand" class="hand">
-  </div>
-  <label>Player: </label>
-  <label id="player-points" class="points"></label>
-  <div id="player-hand" class="hand">
-  </div>
-  <div class="buttons">
-    <button id="deal-button">Deal</button>
-    <button id="hit-button">Hit</button>
-    <button id="stand-button">Stand</button>
-  </div>
-</div>
-    </body>
+
+<head>
+    <title> </title>
+    <link href="flex_layout.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="table">
+        <div id="messages"></div>
+        <div class="dealer">
+            <div class="dealer-info">
+                <label>Dealer: </label>
+                <label id="dealer-points" class="points"></label>
+            </div>
+            <div id="dealer-hand" class="hand">
+                <img src="img/PNG/2C.png" class="card">
+                <img src="img/PNG/8H.png" class="card">
+            </div>
+        </div>
+        <div class="player">
+            <label>Player: </label>
+            <label id="player-points" class="points"></label>
+            <div id="player-hand" class="hand">
+                <img src="img/PNG/10C.png" class="card">
+                <img src="img/PNG/10H.png" class="card">               
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="deal-button">Deal</button>
+            <button id="hit-button">Hit</button>
+            <button id="stand-button">Stand</button>
+        </div>
+        
+    </div>
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="blackjack.js"></script>
+</body>
+
 </html>

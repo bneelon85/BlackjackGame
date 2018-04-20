@@ -1,0 +1,45 @@
+/*body {
+    background-color: #2cc401;
+    border-color: black;
+}*/
+
+#table {
+    background-color: #2cc401;
+    display: flex;
+    flex-direction:column;
+    height:500px;
+    padding:20px;
+}
+
+.dealer {
+    display: flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    padding:30px;
+}
+
+.player {
+    display: flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    padding:30px;
+}
+
+.buttons {
+    display: flex;
+    justify-content:center;
+}
+
+.hand {
+    display:flex;
+    height: 150px;
+    background-color: #9cf725;
+    align-items: center;
+    ;
+}
+
+.card{
+    height: 125px;
+    width:62.5px;
+    align-items: center;
+}
