@@ -163,7 +163,7 @@ function calcPoints (arr) {
          
       });
       $('#stand-button').click(function(){
-        while(calcPoints(dealerHand[0]) < calcPoints(playerHand[0])) {
+        while(calcPoints(dealerHand[0]) <= calcPoints(playerHand[0])) {
         dealerHit(deck);
         $('#dealer-hand').append('<img src="'+dealerHand[0][dealerHand[0].length-1].image+'" class="card">');
         $(document).ready(function () {
