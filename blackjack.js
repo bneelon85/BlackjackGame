@@ -110,6 +110,16 @@ function hit (e) {
   console.log(dealerHand);
 }
 
+function dealerHit (f) {
+  var removed = f.splice(0,1);
+  var toDealer = removed.splice(0,1);
+  //var toPlayer = removed.splice(0,1);
+  //playerHand[0].push(toPlayer[0]);
+  dealerHand[0].push(toDealer[0]);
+  console.log(playerHand);
+  console.log(dealerHand);
+}
+
 function calcPoints (arr) {
   var subset = arr.map(function(item){
     return item.point;
@@ -134,10 +144,27 @@ function calcPoints (arr) {
            $('#player-points').text(calcPoints(playerHand[0]));
            $('#dealer-points').text(calcPoints(dealerHand[0]));
          });
+         if(calcPoints(playerHand[0]) == 21){
+           alert('YOU WIN!!!')
+         }
       });
       $('#hit-button').click(function(){
         hit(deck);
         $('#player-hand').append('<img src="'+playerHand[0][playerHand[0].length-1].image+'" class="card">');
+        $(document).ready(function () {
+           $('#player-points').text(calcPoints(playerHand[0]));
+           $('#dealer-points').text(calcPoints(dealerHand[0]));
+         });
+         if(calcPoints(playerHand[0]) == 21){
+           alert('YOU WIN!!! :-D');
+           } else if (calcPoints(playerHand[0]) > 21) {
+             alert('YOU BUSTED! :-(')
+           }
+         
+      });
+      $('#dealer-hit-button').click(function(){
+        dealerHit(deck);
+        $('#dealer-hand').append('<img src="'+dealerHand[0][dealerHand[0].length-1].image+'" class="card">');
         $(document).ready(function () {
            $('#player-points').text(calcPoints(playerHand[0]));
            $('#dealer-points').text(calcPoints(dealerHand[0]));
