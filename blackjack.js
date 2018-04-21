@@ -158,17 +158,28 @@ function calcPoints (arr) {
          if(calcPoints(playerHand[0]) == 21){
            alert('YOU WIN!!! :-D');
            } else if (calcPoints(playerHand[0]) > 21) {
-             alert('YOU BUSTED! :-(')
+             alert('YOU BUSTED! :-(');
            }
          
       });
-      $('#dealer-hit-button').click(function(){
+      $('#stand-button').click(function(){
+        while(calcPoints(dealerHand[0]) < calcPoints(playerHand[0])) {
         dealerHit(deck);
         $('#dealer-hand').append('<img src="'+dealerHand[0][dealerHand[0].length-1].image+'" class="card">');
         $(document).ready(function () {
            $('#player-points').text(calcPoints(playerHand[0]));
            $('#dealer-points').text(calcPoints(dealerHand[0]));
          });
+         if(calcPoints(dealerHand[0]) == 21){
+           alert('Dealer Wins :-/');
+           } else if (calcPoints(dealerHand[0]) > 21) {
+             alert('YOU WIN!!! :-D');
+           } else if (calcPoints(dealerHand[0]) > calcPoints(playerHand[0])) {
+             alert('Dealer Wins :-/')
+           } else if (calcPoints(dealerHand[0]) == calcPoints(playerHand[0])) {
+             alert('Push...Oh Well!')
+           }
+        }
       });
       
       
