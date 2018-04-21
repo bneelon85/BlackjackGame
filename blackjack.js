@@ -181,6 +181,9 @@ function calcPoints (arr) {
            }
         }
       });
+      $('#restart-button').click(function(){
+        location.reload();
+      });
       
       
     });
